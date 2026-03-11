@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .parent {
+            background-color: lightgray;
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .child-relative {
+            background-color: blue;
+            color: white;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            top: 20px;
+            left: 20px;
+        }
+
+        .child-absolute {
+            background-color: red;
+            color: white;
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        부모
+        <div class="child-relative">relative</div>
+        <div class="child-absolute">absolute</div>
+    </div>
+</body>
+</html>
