@@ -7,31 +7,40 @@
     <style>
         .prob1-box {
             width: 300px;
-            border-radius: 50%;
-        }   
+            border-radius: 12px;          /* 50% → 12px */
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* 그림자 추가 */
+            overflow: scroll;             /* 이미지가 둥근 모서리 밖으로 안나오게 */
+        }
+
+        .prob1-img {
+            background-color: #ddd;       /* 이미지 자리 회색 */
+            height: 180px;
+            width: 100%;                  /* 카드 너비에 꽉 차게 */
+        }
 
         .prob1-child {
-            padding : 16px;    
-        }
-        .prob1-btn {
-            background-color: blue;
-            border-radius: none;    
+            padding: 16px;
         }
 
+        .prob1-btn {
+            background-color: blue;
+            color: white;                 /* 글자 흰색 */
+            border: none;                 /* 테두리 제거 */
+            border-radius: 6px;           /* none → 실제 값 */
+            padding: 8px 16px;            /* 버튼 크기 */
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div class="prob1-box">
-        <img id="prob1-img" src="~">
-        
+        <div class="prob1-img"></div>      <!-- img 대신 div로 회색 영역 표현 -->
+
         <div class="prob1-child">
             <h1>제목</h1>
             <p>설명 텍스트입니다.</p>
-            <button class="prob1-btn" type="button" >
-                [버튼]]
-            </button>
+            <button class="prob1-btn" type="button">버튼</button>
         </div>
     </div>
-    
 </body>
 </html>
