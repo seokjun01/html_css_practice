@@ -1,3 +1,4 @@
+// 콜백 지옥 !! 조심
 //음식을 주문하는 상황
 function orderFood(callback) {
   setTimeout(() => {
@@ -8,26 +9,26 @@ function orderFood(callback) {
 
 function cooldownFood(food, callback) {
   setTimeout(() => {
-    const cooldownFood = `식은 ${food}`;
-    callback(cooldownFood);
-  });
+    const cooldownedFood = `식은 ${food}`;
+    callback(cooldownedFood);
+  }, 2000);
 }
 
 function freezeFood(food, callback) {
   setTimeout(() => {
-    const freezeFood = `냉동된 ${food}`;
-    callback(freezeFood);
+    const freezedFood = `냉동된 ${food}`;
+    callback(freezedFood);
   }, 1500);
 }
 
 orderFood((food) => {
   console.log(food);
 
-  cooldownFood(food, (cooldownFood) => {
-    console.log(cooldownFood);
+  cooldownFood(food, (cooldownedFood) => {
+    console.log(cooldownedFood);
 
-    freezeFood(cooldownFood, (freezeFood) => {
-      console.log(freezeFood);
+    freezeFood(cooldownFood, (freezedFood) => {
+      console.log(freezedFood);
     });
   });
 });
