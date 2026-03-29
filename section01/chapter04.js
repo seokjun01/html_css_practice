@@ -25,8 +25,8 @@ funcA(...arr1);
 
 // Rest 매개변수
 // 나머지 , 나머지 매개변수
-
-function funcB(...rest) {
+// rest 매개변수 뒤에는 새로 매개변수 선언 안됨 ( 개념 자체가 모순이 됨)
+function funcB(one, ...rest) {
   console.log(rest);
 }
 

@@ -1,4 +1,5 @@
 // JS는 동기적으로 코드를 실행한다 (= 순서대로 실행한다)
+// 비동기 작업들은 JS엔진이 아닌, Web APIS에서 실행
 console.log(1);
 
 setTimeout(() => {

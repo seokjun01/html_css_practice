@@ -27,5 +27,18 @@ let keys = Object.keys(person);
 
 for (let key of keys) {
   const value = person[key];
-  console.log(key, value);
+  //console.log(key, value);
 }
+
+//2.2 Object.values
+
+let values = Object.values(person);
+for (let value of values) {
+}
+
+//2.3 for in
+
+for (let key in person) {
+}
+
+// for of는 배열에만, for in에는 객체에만 사용가능

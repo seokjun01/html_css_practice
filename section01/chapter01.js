@@ -12,8 +12,12 @@ let f7 = 0n;
 //falsy한 값 뺴고 전부다
 
 // 3. 활용 사례
-
+// undefined, null 다 조건문으로 적는건 비효율적이라 Truthy & Falsy로 작성
 function printName(person) {
+  if (!person) {
+    console.log("person의 값이 없음");
+    return;
+  }
   console.log(person.name);
 }
 
