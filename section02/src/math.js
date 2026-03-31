@@ -16,6 +16,6 @@ export function sub(a, b) {
 
 // ES 모듈 시스템
 
-export default function multiply(a, b) {
+export default function multiply(a, b) { //기본 export는 import시 네이밍 자유 가능
   return a * b;
 }
