@@ -1,9 +1,14 @@
 import "./TodoItem.css";
 
-const TodoItem = ({ id, isDone, content, date, onUpdate }) => {
+const TodoItem = ({ id, isDone, content, date, onUpdate, onDelete }) => {
   const onChangeCheckBox = () => {
     onUpdate(id);
   };
+
+  const onClickDelteButton = () => {
+    onDelete(id);
+  };
+
   return (
     <div className="TodoItem">
       <input
@@ -14,7 +19,7 @@ const TodoItem = ({ id, isDone, content, date, onUpdate }) => {
       />
       <div className="content">{content}</div>
       <div className="Date">{new Date(date).toLocaleDateString}</div>
-      <button>삭제</button>
+      <button onClick={onClickDelteButton}>삭제</button>
     </div>
   );
 };

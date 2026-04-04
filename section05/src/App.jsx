@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import List from "./components/List";
 import Editor from "./components/Editor";
 import "./App.css";
+import Exam from "./components/Exam";
 
 const mockData = [
   {
@@ -49,11 +50,17 @@ function App() {
     );
   };
 
+  const onDelete = (targetId) => {
+    //인수 타겟이랑 일치하는 id갖는 요소만 삭제한 새로운 배열을 반환
+    setTodos(todos.filter((todo) => todo.id !== targetId));
+  };
+
   return (
     <div className="App">
-      <Header />
+      <Exam />
+      {/* <Header />
       <Editor onCreate={onCreate} />
-      <List todos={todos} onUpdate={onUpdate} />
+      <List todos={todos} onUpdate={onUpdate} onDelete={onDelete} /> */}
     </div>
   );
 }
