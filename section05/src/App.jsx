@@ -27,11 +27,11 @@ const mockData = [
 
 function App() {
   const [todos, setTodos] = useState(mockData);
-  const idRef = useRef(0);
+  const idRef = useRef(3);
 
   const onCreate = (content) => {
     const newTodo = {
-      id: 0,
+      id: idRef.current++,
       isDone: false,
       content: content,
       date: new Date().getTime(),
@@ -40,11 +40,20 @@ function App() {
     setTodos({ newTodo, ...todos });
   };
 
+  const onUpdate = (targetId) => {
+    // todos state값들 중에  target과 일치하는 id의 isDone 변경
+    setTodos(
+      todos.map((todo) =>
+        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo,
+      ),
+    );
+  };
+
   return (
     <div className="App">
       <Header />
       <Editor onCreate={onCreate} />
-      <List />
+      <List todos={todos} onUpdate={onUpdate} />
     </div>
   );
 }
