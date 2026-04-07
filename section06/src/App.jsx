@@ -8,47 +8,36 @@ import { getEmotionImage } from "./util/get-emotion-image";
 import Button from "./components/Button";
 import Header from "./components/Header";
 import Edit from "./pages/Edit";
+import { useReducer } from "reat";
 
 // 1. "/" : 모든 일기를 조회하는 Home 페이지
 //2. "/new" : 새로운 일기를 작성하는 New 페이지
 // 3. "/diary" : 일기를 상세히 조회하는 Diary 페이지
 
-function App() {
-  const nav = useNavigate();
+const mockData = [
+  {
+    id: 1,
+    createDate: new Date().getTime(),
+    emotionId: 1,
+    content: "1번 일기 내용",
+  },
+  {
+    id: 2,
+    createDate: new Date().getTime(),
+    emotionId: 2,
+    content: "2번 일기 내용",
+  },
+];
 
-  const onClickButton = () => {
-    nav("/new");
-  };
+function reducer(state, action) {
+  return state;
+}
+
+function App() {
+  const [data, dispatch] = useReducer(reducer, mockData);
+
   return (
     <>
-      <Header
-        title={"Header"}
-        leftChild={<Button text={"Left"} />}
-        rightChild={<Button text={"Right"} />}
-      />
-      <Button
-        text={"123"}
-        type={"DEFAULT"}
-        onClick={() => {
-          console.log("123번 버튼");
-        }}
-      />
-      <Button
-        text={"123"}
-        type={"POSITIVE"}
-        onClick={() => {
-          console.log("123번 버튼");
-        }}
-      />
-      <Button
-        text={"123"}
-        type={"NEGATIVE"}
-        onClick={() => {
-          console.log("123번 버튼");
-        }}
-      />
-
-      <button onClick={onClickButton}>New 페이지로 이동</button>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new" element={<New />} />
